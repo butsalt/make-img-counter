@@ -152,7 +152,7 @@ function normalizeNum (num, maxLength) {
     return num;
 }
 
-function makeCounter (container, curNum, maxLength, type) {
+function makeImgCounter (container, curNum, maxLength, type) {
     if (curNum == null) {
         curNum = 0;
     }
@@ -210,5 +210,3 @@ function makeCounter (container, curNum, maxLength, type) {
         }
     }
 }
-
-module.exports = makeCounter;
