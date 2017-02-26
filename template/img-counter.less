@@ -1,0 +1,156 @@
+.img-counter {
+    .img-counter-board {
+        width: @img-width;
+        height: @img-height;
+        position: relative;
+        display: inline-block;
+    }
+
+    .half {
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 50%;
+        backface-visibility: hidden;
+        transition: transform 1s;
+
+        &[data-num="0"] {
+            background-image: data-uri(@img-0);
+        }
+
+        &[data-num="1"] {
+            background-image: data-uri(@img-1);
+        }
+
+        &[data-num="2"] {
+            background-image: data-uri(@img-2);
+        }
+
+        &[data-num="3"] {
+            background-image: data-uri(@img-3);
+        }
+
+        &[data-num="4"] {
+            background-image: data-uri(@img-4);
+        }
+
+        &[data-num="5"] {
+            background-image: data-uri(@img-5);
+        }
+
+        &[data-num="6"] {
+            background-image: data-uri(@img-6);
+        }
+
+        &[data-num="7"] {
+            background-image: data-uri(@img-7);
+        }
+
+        &[data-num="8"] {
+            background-image: data-uri(@img-8);
+        }
+
+        &[data-num="9"] {
+            background-image: data-uri(@img-9);
+        }
+    }
+
+    .tweak {
+        color: black;
+        transition: color 1s;
+
+        &.tack {
+            color: red;
+        }
+    }
+
+    .top-half {
+        top: 0;
+        transform-origin: 50% 100%;
+    }
+
+    .bottom-half {
+        bottom: 0;
+        background-position: 0 100%;
+        transform-origin: 50% 0;
+    }
+
+    .back-half {
+        visibility: hidden;
+    }
+
+    /** 向下翻 **/
+    .increment {
+        .top-half.cur-half {
+            z-index: 1;
+        }
+
+        .bottom-half.next-half {
+            z-index: 2;
+        }
+
+        .bottom-half.next-half {
+            transform: rotateX(180deg);
+        }
+
+        .top-half.back-half {
+            transform: rotateX(180deg);
+        }
+
+        &.animating {
+            .bottom-half.next-half {
+                transform: rotateX(0);
+            }
+
+            .top-half.cur-half {
+                transform: rotateX(180deg);
+            }
+
+            .top-half.back-half {
+                transform: rotateX(0);
+            }
+
+            .bottom-half.back-half {
+                transform: rotateX(180deg);
+            }
+        }
+    }
+
+    /** 向上翻 **/
+    .decrement {
+        .bottom-half.cur-half {
+            z-index: 1;
+        }
+
+        .top-half.next-half {
+            z-index: 2;
+        }
+
+        .top-half.next-half {
+            transform: rotateX(180deg);
+        }
+
+        .bottom-half.back-half {
+            transform: rotateX(180deg);
+        }
+
+        &.animating {
+            .top-half.next-half {
+                transform: rotateX(0);
+            }
+
+            .bottom-half.cur-half {
+                transform: rotateX(180deg);
+            }
+
+            .bottom-half.back-half {
+                transform: rotateX(0);
+            }
+
+            .top-half.back-half {
+                transform: rotateX(180deg);
+            }
+        }
+    }
+}

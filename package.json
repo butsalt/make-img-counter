@@ -1,0 +1,35 @@
+{
+  "name": "make-img-counter",
+  "version": "0.1.0",
+  "description": "create image counter",
+  "main": "lib/index.js",
+  "bin": {
+    "make-img-counter": "bin/cli.js"
+  },
+  "dependencies": {
+    "amd-wrap": "^1.1.0",
+    "del": "^2.2.2",
+    "glob": "^7.1.1",
+    "image-size": "^0.5.1",
+    "less": "^2.7.2",
+    "less-plugin-autoprefix": "^1.5.1",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/butsalt/make-img-counter.git"
+  },
+  "keywords": [
+    "counter"
+  ],
+  "author": "butSalt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/butsalt/make-img-counter/issues"
+  },
+  "homepage": "https://github.com/butsalt/make-img-counter#readme"
+}
