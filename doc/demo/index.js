@@ -202,8 +202,7 @@ function makeImgCounter (container, curNum, maxLength, type) {
 
     return {
         update: function (num) {
-            var waitingLength = nextNumList.length;
-            if (waitingLength) {
+            if (nextNumList.length) {
                 nextNumList = [];
             }
             nextNumList.push(
