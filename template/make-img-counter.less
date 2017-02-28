@@ -1,10 +1,8 @@
-.img-counter {
-    .img-counter-board {
-        width: @img-width;
-        height: @img-height;
-        position: relative;
-        display: inline-block;
-    }
+.img-counter-board {
+    width: @img-width;
+    height: @img-height;
+    position: relative;
+    display: inline-block;
 
     .half {
         background-repeat: no-repeat;
@@ -56,15 +54,6 @@
         }
     }
 
-    .tweak {
-        color: black;
-        transition: color 1s;
-
-        &.tack {
-            color: red;
-        }
-    }
-
     .top-half {
         top: 0;
         transform-origin: 50% 100%;
@@ -81,7 +70,7 @@
     }
 
     /** 向下翻 **/
-    .increment {
+    &.increment {
         .top-half.cur-half {
             z-index: 1;
         }
@@ -118,7 +107,7 @@
     }
 
     /** 向上翻 **/
-    .decrement {
+    &.decrement {
         .bottom-half.cur-half {
             z-index: 1;
         }
@@ -152,5 +141,14 @@
                 transform: rotateX(180deg);
             }
         }
+    }
+}
+
+.tweak {
+    color: black;
+    transition: color 1s;
+
+    &.tack {
+        color: red;
     }
 }
