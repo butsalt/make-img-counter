@@ -1,3 +1,12 @@
+;(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define([], factory);
+  } else if (typeof exports === 'object') {
+    module.exports = factory();
+  } else {
+    root.makeImgCounter = factory();
+  }
+}(this, function() {
 function makeTweak () {
     var isAnimating = false;
     var tack = false;
@@ -201,3 +210,5 @@ function makeImgCounter (container, curNum, maxLength, type) {
         }
     }
 }
+return makeImgCounter;
+}));

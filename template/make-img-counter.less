@@ -52,6 +52,10 @@
         &[data-num="9"] {
             background-image: url(@img-9);
         }
+
+        &[data-state="back"] {
+            visibility: hidden;
+        }
     }
 
     .top-half {
@@ -65,42 +69,38 @@
         transform-origin: 50% 0;
     }
 
-    .back-half {
-        visibility: hidden;
-    }
-
     /** 向下翻 **/
     &.increment {
-        .top-half.cur-half {
+        .top-half[data-state="cur"] {
             z-index: 1;
         }
 
-        .bottom-half.next-half {
+        .bottom-half[data-state="next"] {
             z-index: 2;
         }
 
-        .bottom-half.next-half {
+        .bottom-half[data-state="next"] {
             transform: rotateX(180deg);
         }
 
-        .top-half.back-half {
+        .top-half[data-state="back"] {
             transform: rotateX(180deg);
         }
 
         &.animating {
-            .bottom-half.next-half {
+            .bottom-half[data-state="next"] {
                 transform: rotateX(0);
             }
 
-            .top-half.cur-half {
+            .top-half[data-state="cur"] {
                 transform: rotateX(180deg);
             }
 
-            .top-half.back-half {
+            .top-half[data-state="back"] {
                 transform: rotateX(0);
             }
 
-            .bottom-half.back-half {
+            .bottom-half[data-state="back"] {
                 transform: rotateX(180deg);
             }
         }
@@ -108,36 +108,36 @@
 
     /** 向上翻 **/
     &.decrement {
-        .bottom-half.cur-half {
+        .bottom-half[data-state="cur"] {
             z-index: 1;
         }
 
-        .top-half.next-half {
+        .top-half[data-state="next"] {
             z-index: 2;
         }
 
-        .top-half.next-half {
+        .top-half[data-state="next"] {
             transform: rotateX(180deg);
         }
 
-        .bottom-half.back-half {
+        .bottom-half[data-state="back"] {
             transform: rotateX(180deg);
         }
 
         &.animating {
-            .top-half.next-half {
+            .top-half[data-state="next"] {
                 transform: rotateX(0);
             }
 
-            .bottom-half.cur-half {
+            .bottom-half[data-state="cur"] {
                 transform: rotateX(180deg);
             }
 
-            .bottom-half.back-half {
+            .bottom-half[data-state="back"] {
                 transform: rotateX(0);
             }
 
-            .top-half.back-half {
+            .top-half[data-state="back"] {
                 transform: rotateX(180deg);
             }
         }
