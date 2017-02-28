@@ -152,7 +152,7 @@ function normalizeNum (num, maxLength) {
     return num;
 }
 
-function makeCounter (container, curNum, maxLength, type) {
+function makeImgCounter (container, curNum, maxLength, type) {
     if (curNum == null) {
         curNum = 0;
     }
@@ -202,6 +202,10 @@ function makeCounter (container, curNum, maxLength, type) {
 
     return {
         update: function (num) {
+            var waitingLength = nextNumList.length;
+            if (waitingLength) {
+                nextNumList = [];
+            }
             nextNumList.push(
                 normalizeNum(num, maxLength)
             );
@@ -211,4 +215,4 @@ function makeCounter (container, curNum, maxLength, type) {
     }
 }
 
-window.counter = makeCounter(document.getElementById('J-counter'), 22, 3);
+window.counter = makeImgCounter(document.getElementById('J-counter'), 22, 3);
