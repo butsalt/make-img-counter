@@ -20,11 +20,7 @@
   transition: transform 1s, -webkit-transform 1s;
 }
 .img-counter-board .half .card {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  height: 100%;
 }
 .img-counter-board .half[data-num="0"] .card {
   background-image: url("img/0.png");
