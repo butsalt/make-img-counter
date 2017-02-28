@@ -13,43 +13,51 @@
         backface-visibility: hidden;
         transition: transform 1s;
 
-        &[data-num="0"] {
+        .card {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        &[data-num="0"] .card {
             background-image: url(@img-0);
         }
 
-        &[data-num="1"] {
+        &[data-num="1"] .card {
             background-image: url(@img-1);
         }
 
-        &[data-num="2"] {
+        &[data-num="2"] .card {
             background-image: url(@img-2);
         }
 
-        &[data-num="3"] {
+        &[data-num="3"] .card {
             background-image: url(@img-3);
         }
 
-        &[data-num="4"] {
+        &[data-num="4"] .card {
             background-image: url(@img-4);
         }
 
-        &[data-num="5"] {
+        &[data-num="5"] .card {
             background-image: url(@img-5);
         }
 
-        &[data-num="6"] {
+        &[data-num="6"] .card {
             background-image: url(@img-6);
         }
 
-        &[data-num="7"] {
+        &[data-num="7"] .card {
             background-image: url(@img-7);
         }
 
-        &[data-num="8"] {
+        &[data-num="8"] .card {
             background-image: url(@img-8);
         }
 
-        &[data-num="9"] {
+        &[data-num="9"] .card {
             background-image: url(@img-9);
         }
 
@@ -65,8 +73,11 @@
 
     .bottom-half {
         bottom: 0;
-        background-position: 0 100%;
         transform-origin: 50% 0;
+
+        .card {
+            background-position: 0 100%;
+        }
     }
 
     /** 向下翻 **/

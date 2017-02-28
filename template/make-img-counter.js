@@ -61,6 +61,13 @@ function makeBoard (curNum, type) {
     halfList.push(createEl('half top-half', board, 'back'));
     halfList.push(createEl('half bottom-half', board, 'back'));
 
+    halfList
+        .forEach(function insertNumCard (el) {
+            var card = document.createElement('div');
+            card.classList.add('card');
+            el.appendChild(card);
+        });
+
     var tweak = makeTweak();
 
     halfList[0].setAttribute('data-num', curNum);
