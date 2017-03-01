@@ -12,49 +12,54 @@
         height: 50%;
         backface-visibility: hidden;
         transition: transform 1s;
+        overflow: hidden;
 
         .card {
-            height: 100%;
+            position: absolute;
+            background-image: url(@sprite-dist);
+            height: 200%;
+            left: 0;
+            right: 0;
         }
 
         &[data-num="0"] .card {
-            background-image: url(@img-0);
+            background-position: left @img-0-left top @img-0-top;
         }
 
         &[data-num="1"] .card {
-            background-image: url(@img-1);
+            background-position: left @img-1-left top @img-1-top;
         }
 
         &[data-num="2"] .card {
-            background-image: url(@img-2);
+            background-position: left @img-2-left top @img-2-top;
         }
 
         &[data-num="3"] .card {
-            background-image: url(@img-3);
+            background-position: left @img-3-left top @img-3-top;
         }
 
         &[data-num="4"] .card {
-            background-image: url(@img-4);
+            background-position: left @img-4-left top @img-4-top;
         }
 
         &[data-num="5"] .card {
-            background-image: url(@img-5);
+            background-position: left @img-5-left top @img-5-top;
         }
 
         &[data-num="6"] .card {
-            background-image: url(@img-6);
+            background-position: left @img-6-left top @img-6-top;
         }
 
         &[data-num="7"] .card {
-            background-image: url(@img-7);
+            background-position: left @img-7-left top @img-7-top;
         }
 
         &[data-num="8"] .card {
-            background-image: url(@img-8);
+            background-position: left @img-8-left top @img-8-top;
         }
 
         &[data-num="9"] .card {
-            background-image: url(@img-9);
+            background-position: left @img-9-left top @img-9-top;
         }
 
         &[data-state="back"] {
@@ -65,6 +70,10 @@
     .top-half {
         top: 0;
         transform-origin: 50% 100%;
+
+        .card {
+            top: 0;
+        }
     }
 
     .bottom-half {
@@ -72,7 +81,7 @@
         transform-origin: 50% 0;
 
         .card {
-            background-position: 0 100%;
+            bottom: 0;
         }
     }
 

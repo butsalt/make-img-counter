@@ -12,9 +12,9 @@
     "gulp": "^3.9.1",
     "gulp-less": "^3.3.0",
     "gulp-umd": "^0.2.0",
-    "image-size": "^0.5.1",
     "less-plugin-autoprefix": "^1.5.1",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "spritesmith": "^3.1.0"
   },
   "devDependencies": {},
   "scripts": {
