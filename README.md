@@ -3,7 +3,7 @@
 切好0-9对应的图片，一行命令生成定制的记分板组件
 
 ## 使用方法
-1. npm install -g make-img-counter
+1. `npm install -g make-img-counter`
 2. 创建一个文件夹，比如叫`test`
 3. 在`test`文件夹内创建一个文件夹`src`
 4. 在`src`文件夹内放入你已经切好的0-9的图片（宽高必须一致）
