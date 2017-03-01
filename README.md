@@ -6,7 +6,7 @@
 1. `npm install -g make-img-counter`
 2. 创建一个文件夹，比如叫`test`
 3. 在`test`文件夹内创建一个文件夹`src`
-4. 在`src`文件夹内放入你已经切好的0-9的图片（宽高必须一致）
+4. 在`test/src`文件夹内放入你已经切好的0-9的图片（宽高必须一致）
 5. 在`test`目录下执行`make-img-counter`
 6. 在`test/dist`下获取产出物，包括`js`，`css`和`img`
 
