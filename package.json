@@ -1,6 +1,6 @@
 {
   "name": "make-img-counter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "create image counter",
   "main": "lib/index.js",
   "bin": {
