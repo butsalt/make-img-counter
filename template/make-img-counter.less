@@ -1,170 +1,170 @@
 .img-counter-board {
-    width: @img-width;
-    height: @img-height;
-    position: relative;
-    display: inline-block;
+  width: @img-width;
+  height: @img-height;
+  position: relative;
+  display: inline-block;
 
-    .half {
-        background-repeat: no-repeat;
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: 50%;
-        backface-visibility: hidden;
-        transition: transform 1s;
-        overflow: hidden;
+  .half {
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50%;
+    backface-visibility: hidden;
+    transition: transform 1s;
+    overflow: hidden;
 
-        .card {
-            position: absolute;
-            background-image: url(@sprite-dist);
-            height: 200%;
-            left: 0;
-            right: 0;
-        }
-
-        &[data-num="0"] .card {
-            background-position: left @img-0-left top @img-0-top;
-        }
-
-        &[data-num="1"] .card {
-            background-position: left @img-1-left top @img-1-top;
-        }
-
-        &[data-num="2"] .card {
-            background-position: left @img-2-left top @img-2-top;
-        }
-
-        &[data-num="3"] .card {
-            background-position: left @img-3-left top @img-3-top;
-        }
-
-        &[data-num="4"] .card {
-            background-position: left @img-4-left top @img-4-top;
-        }
-
-        &[data-num="5"] .card {
-            background-position: left @img-5-left top @img-5-top;
-        }
-
-        &[data-num="6"] .card {
-            background-position: left @img-6-left top @img-6-top;
-        }
-
-        &[data-num="7"] .card {
-            background-position: left @img-7-left top @img-7-top;
-        }
-
-        &[data-num="8"] .card {
-            background-position: left @img-8-left top @img-8-top;
-        }
-
-        &[data-num="9"] .card {
-            background-position: left @img-9-left top @img-9-top;
-        }
-
-        &[data-state="back"] {
-            visibility: hidden;
-        }
+    .card {
+      position: absolute;
+      background-image: url(@sprite-dist);
+      height: 200%;
+      left: 0;
+      right: 0;
     }
 
-    .top-half {
-        top: 0;
-        transform-origin: 50% 100%;
-
-        .card {
-            top: 0;
-        }
+    &[data-num="0"] .card {
+      background-position: left @img-0-left top @img-0-top;
     }
 
-    .bottom-half {
-        bottom: 0;
-        transform-origin: 50% 0;
-
-        .card {
-            bottom: 0;
-        }
+    &[data-num="1"] .card {
+      background-position: left @img-1-left top @img-1-top;
     }
 
-    /** 向下翻 **/
-    &.increment {
-        .top-half[data-state="cur"] {
-            z-index: 1;
-        }
-
-        .bottom-half[data-state="next"] {
-            z-index: 2;
-        }
-
-        .bottom-half[data-state="next"] {
-            transform: rotateX(180deg);
-        }
-
-        .top-half[data-state="back"] {
-            transform: rotateX(180deg);
-        }
-
-        &.animating {
-            .bottom-half[data-state="next"] {
-                transform: rotateX(0);
-            }
-
-            .top-half[data-state="cur"] {
-                transform: rotateX(180deg);
-            }
-
-            .top-half[data-state="back"] {
-                transform: rotateX(0);
-            }
-
-            .bottom-half[data-state="back"] {
-                transform: rotateX(180deg);
-            }
-        }
+    &[data-num="2"] .card {
+      background-position: left @img-2-left top @img-2-top;
     }
 
-    /** 向上翻 **/
-    &.decrement {
-        .bottom-half[data-state="cur"] {
-            z-index: 1;
-        }
-
-        .top-half[data-state="next"] {
-            z-index: 2;
-        }
-
-        .top-half[data-state="next"] {
-            transform: rotateX(180deg);
-        }
-
-        .bottom-half[data-state="back"] {
-            transform: rotateX(180deg);
-        }
-
-        &.animating {
-            .top-half[data-state="next"] {
-                transform: rotateX(0);
-            }
-
-            .bottom-half[data-state="cur"] {
-                transform: rotateX(180deg);
-            }
-
-            .bottom-half[data-state="back"] {
-                transform: rotateX(0);
-            }
-
-            .top-half[data-state="back"] {
-                transform: rotateX(180deg);
-            }
-        }
+    &[data-num="3"] .card {
+      background-position: left @img-3-left top @img-3-top;
     }
+
+    &[data-num="4"] .card {
+      background-position: left @img-4-left top @img-4-top;
+    }
+
+    &[data-num="5"] .card {
+      background-position: left @img-5-left top @img-5-top;
+    }
+
+    &[data-num="6"] .card {
+      background-position: left @img-6-left top @img-6-top;
+    }
+
+    &[data-num="7"] .card {
+      background-position: left @img-7-left top @img-7-top;
+    }
+
+    &[data-num="8"] .card {
+      background-position: left @img-8-left top @img-8-top;
+    }
+
+    &[data-num="9"] .card {
+      background-position: left @img-9-left top @img-9-top;
+    }
+
+    &[data-state="back"] {
+      visibility: hidden;
+    }
+  }
+
+  .top-half {
+    top: 0;
+    transform-origin: 50% 100%;
+
+    .card {
+      top: 0;
+    }
+  }
+
+  .bottom-half {
+    bottom: 0;
+    transform-origin: 50% 0;
+
+    .card {
+      bottom: 0;
+    }
+  }
+
+  /** 向下翻 **/
+  &.increment {
+    .top-half[data-state="cur"] {
+      z-index: 1;
+    }
+
+    .bottom-half[data-state="next"] {
+      z-index: 2;
+    }
+
+    .bottom-half[data-state="next"] {
+      transform: rotateX(180deg);
+    }
+
+    .top-half[data-state="back"] {
+      transform: rotateX(180deg);
+    }
+
+    &.animating {
+      .bottom-half[data-state="next"] {
+        transform: rotateX(0);
+      }
+
+      .top-half[data-state="cur"] {
+        transform: rotateX(180deg);
+      }
+
+      .top-half[data-state="back"] {
+        transform: rotateX(0);
+      }
+
+      .bottom-half[data-state="back"] {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+
+  /** 向上翻 **/
+  &.decrement {
+    .bottom-half[data-state="cur"] {
+      z-index: 1;
+    }
+
+    .top-half[data-state="next"] {
+      z-index: 2;
+    }
+
+    .top-half[data-state="next"] {
+      transform: rotateX(180deg);
+    }
+
+    .bottom-half[data-state="back"] {
+      transform: rotateX(180deg);
+    }
+
+    &.animating {
+      .top-half[data-state="next"] {
+        transform: rotateX(0);
+      }
+
+      .bottom-half[data-state="cur"] {
+        transform: rotateX(180deg);
+      }
+
+      .bottom-half[data-state="back"] {
+        transform: rotateX(0);
+      }
+
+      .top-half[data-state="back"] {
+        transform: rotateX(180deg);
+      }
+    }
+  }
 }
 
 .tweak {
-    color: black;
-    transition: color 1s;
+  color: black;
+  transition: color 1s;
 
-    &.tack {
-        color: red;
-    }
+  &.tack {
+    color: red;
+  }
 }
