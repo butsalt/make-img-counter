@@ -23,10 +23,10 @@
 // 参数3：积分板最高位数（默认为1）
 // 参数4：从上向下翻 || 从下向上翻（默认为从上向下翻） 
 var counter = makeImgCounter(
-    document.getElementById('J-counter'),
-    123,
-    3,
-    'increment' || 'decrement'
+  document.getElementById('J-counter'),
+  123,
+  3,
+  'increment' || 'decrement'
 );
 
 // 更新计分板上的数字
