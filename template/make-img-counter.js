@@ -132,14 +132,15 @@ function makeBoard (curNum, type) {
 }
 
 function normalizeNum (num, maxLength) {
-  var len = num.toString().length;
+  num = String(num);
 
-  // 最简单粗暴的方式
-  while (len < maxLength) {
-    num = '0' + num;
-    len ++;
+  if (num.length > maxLength) {
+    var num = Number('1e' + maxLength);
+    return String(--num);
   }
-
+  while (num.length < maxLength) {
+    num = '0' + num;
+  }
   return num;
 }
 
