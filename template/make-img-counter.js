@@ -135,11 +135,8 @@ function normalizeNum (num, maxLength) {
   num = String(num);
 
   if (num.length > maxLength) {
-    num = 1;
-    while (maxLength--) {
-      num *= 10;
-    }
-    num = String(--num);
+    num = Number('1e' + maxLength) - 1;
+    return String(num);
   }
   while (num.length < maxLength) {
     num = '0' + num;
