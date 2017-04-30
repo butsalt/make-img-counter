@@ -135,8 +135,8 @@ function normalizeNum (num, maxLength) {
   num = String(num);
 
   if (num.length > maxLength) {
-    var num = Number('1e' + maxLength);
-    return String(--num);
+    num = Number('1e' + maxLength) - 1;
+    return String(num);
   }
   while (num.length < maxLength) {
     num = '0' + num;
