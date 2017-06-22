@@ -1,10 +1,10 @@
-function makeTweak () {
+function makeTweak() {
   var isAnimating = false;
   var tack = false;
   var tweak = document.createElement('div');
   tweak.classList.add('tweak');
 
-  tweak.addEventListener('transitionend', function processAll () {
+  tweak.addEventListener('transitionend', function processAll() {
     var handler;
     while (handler = handlerList.pop()) {
       handler();
@@ -14,7 +14,7 @@ function makeTweak () {
 
   document.body.appendChild(tweak);
   var handlerList = [];
-  return function nextTick (handler) {
+  return function nextTick(handler) {
     handlerList.push(handler);
     if (isAnimating) {
       return;
@@ -29,19 +29,19 @@ function makeTweak () {
   };
 }
 
-function makeBoard (curNum, type) {
+function makeBoard(curNum, type) {
   if (curNum == null) {
     curNum = 0;
   }
   var isAnimating = false;
   var nextNumList = [];
 
-  function createEl (classList, container, state) {
+  function createEl(classList, container, state) {
     var el = document.createElement('div');
     if (classList && typeof classList === 'string') {
       classList = classList.split(/\s+/);
     }
-    classList && classList.forEach(function (cls) {
+    classList && classList.forEach(function(cls) {
       el.classList.add(cls);
     });
     if (state) {
@@ -62,7 +62,7 @@ function makeBoard (curNum, type) {
   halfList.push(createEl('half bottom-half', board, 'back'));
 
   halfList
-    .forEach(function insertNumCard (el) {
+    .forEach(function insertNumCard(el) {
       var card = document.createElement('div');
       card.classList.add('card');
       el.appendChild(card);
@@ -73,7 +73,7 @@ function makeBoard (curNum, type) {
   halfList[0].setAttribute('data-num', curNum);
   halfList[1].setAttribute('data-num', curNum);
 
-  function play (force) {
+  function play(force) {
     if (force !== true && isAnimating) {
       return;
     }
@@ -85,7 +85,7 @@ function makeBoard (curNum, type) {
 
     board.classList.add('animating');
 
-    tweak(function prepareNext () {
+    tweak(function prepareNext() {
       curNum = nextNum;
 
       halfList.push(halfList.shift());
@@ -114,7 +114,7 @@ function makeBoard (curNum, type) {
 
   return {
     el: board,
-    update: function (num) {
+    update: function(num) {
       if (isAnimating) {
         if (num == nextNumList[nextNumList.length - 1]) {
           return;
@@ -131,7 +131,7 @@ function makeBoard (curNum, type) {
   };
 }
 
-function normalizeNum (num, maxLength) {
+function normalizeNum(num, maxLength) {
   num = String(num);
 
   if (num.length > maxLength) {
@@ -144,7 +144,7 @@ function normalizeNum (num, maxLength) {
   return num;
 }
 
-function makeImgCounter (container, curNum, maxLength, type) {
+function makeImgCounter(container, curNum, maxLength, type) {
   if (curNum == null) {
     curNum = 0;
   }
@@ -171,7 +171,7 @@ function makeImgCounter (container, curNum, maxLength, type) {
     boardList.push(curBoard);
   } while(++i < maxLength);
 
-  function play (force) {
+  function play(force) {
     if (force !== true && isAnimating) {
       return;
     }
@@ -179,11 +179,11 @@ function makeImgCounter (container, curNum, maxLength, type) {
 
     var nextNum = nextNumList.shift();
     boardList
-      .forEach(function (board, i) {
+      .forEach(function(board, i) {
         board.update(nextNum[i]);
       });
 
-    tweak(function () {
+    tweak(function() {
       if (!nextNumList.length) {
         isAnimating = false;
         return;
@@ -193,7 +193,7 @@ function makeImgCounter (container, curNum, maxLength, type) {
   }
 
   return {
-    update: function (num) {
+    update: function(num) {
       if (nextNumList.length) {
         nextNumList = [];
       }
