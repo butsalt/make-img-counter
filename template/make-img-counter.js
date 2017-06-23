@@ -41,7 +41,7 @@ function makeBoard(curNum, type) {
     if (classList && typeof classList === 'string') {
       classList = classList.split(/\s+/);
     }
-    classList && classList.forEach(function(cls) {
+    classList && classList.forEach(function (cls) {
       el.classList.add(cls);
     });
     if (state) {
@@ -114,7 +114,7 @@ function makeBoard(curNum, type) {
 
   return {
     el: board,
-    update: function(num) {
+    update: function (num) {
       if (isAnimating) {
         if (num == nextNumList[nextNumList.length - 1]) {
           return;
@@ -179,11 +179,11 @@ function makeImgCounter(container, curNum, maxLength, type) {
 
     var nextNum = nextNumList.shift();
     boardList
-      .forEach(function(board, i) {
+      .forEach(function (board, i) {
         board.update(nextNum[i]);
       });
 
-    tweak(function() {
+    tweak(function () {
       if (!nextNumList.length) {
         isAnimating = false;
         return;
@@ -193,7 +193,7 @@ function makeImgCounter(container, curNum, maxLength, type) {
   }
 
   return {
-    update: function(num) {
+    update: function (num) {
       if (nextNumList.length) {
         nextNumList = [];
       }
